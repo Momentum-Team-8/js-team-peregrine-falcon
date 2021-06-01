@@ -77,25 +77,25 @@ At the end of each shift, add, commit, and push all the code that has been writt
 - driver: Ellie
 - navigator: Wendy
 - moderator: Joe
-- scout: Shaune
+- scout: Logan
 
 #### shift 2
 
 - driver: Wendy
 - navigator: Joe
-- moderator: Shaune
+- moderator: Logan
 - scout: Ellie
 
 #### shift 3
 
 - driver: Joe
-- navigator: Shaune
+- navigator: Logan
 - moderator: Ellie
 - scout: Wendy
 
 #### shift 4
 
-- driver: Shaune
+- driver: Logan
 - navigator: Ellie
 - moderator: Wendy
 - scout: Joe
