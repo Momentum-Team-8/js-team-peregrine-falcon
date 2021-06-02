@@ -10,7 +10,7 @@ form.addEventListener("submit", event =>{
     createNewMovie(movieInput)
 })
 
-function createNewMovie (){
+function createNewMovie (movieInput){
     fetch (url,{
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -23,12 +23,13 @@ function createNewMovie (){
         .then(response => response.json())
         .then(data => {
         renderNewMovie(data)
+        console.log(movieInput)
         })
     
 }
 
 function renderNewMovie(movieObj) {
     itemEl = document.createElement('li')
-    itemEl.innerText = `${movieObj.title}`
+    itemEl.innerHTML = `${movieObj.title}`
     movieList.appendChild(itemEl)
 }
