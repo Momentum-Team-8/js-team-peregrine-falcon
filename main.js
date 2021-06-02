@@ -11,6 +11,7 @@ form.addEventListener("submit", event =>{
 })
 
 form.addEventListener('click', event => {
+
     
 })
 
@@ -33,10 +34,12 @@ function createNewMovie (movieInput){
 }
 
 function renderNewMovie(movieObj) {
-    itemEl = document.createElement('li')
-    buttonEl=document.createElement('button')
+    const itemEl = document.createElement('li')
+    let buttonEl=document.createElement('button')
+    buttonEl.id =`${movieObj.id}-${movieObj.title}`
     itemEl.innerHTML = `${movieObj.title}`
     movieList.appendChild(itemEl)
     itemEl.appendChild(buttonEl)
     buttonEl.innerText = "Not Yet Watched"
+
 }
