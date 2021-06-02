@@ -1,3 +1,5 @@
+//const momentMin = require("./moment.min")
+
 const url = "http://localhost:3000/movies"
 const movieInput = document.getElementById("movie-input").value
 const movieList = document.getElementById('movie-list')
@@ -12,7 +14,7 @@ form.addEventListener("submit", event =>{
 
 movieList.addEventListener('click', event => {
 console.log(event.target.id)
-document.getElementById(event.target.id).innerText = "Watched"
+document.getElementById(event.target.id).innerText = "Watched" + " " + moment().format('l')
 })
 
 fetch(url)
