@@ -10,6 +10,10 @@ form.addEventListener("submit", event =>{
     createNewMovie(movieInput)
 })
 
+form.addEventListener('click', event => {
+    
+})
+
 function createNewMovie (movieInput){
     fetch (url,{
         method: "POST",
@@ -30,6 +34,9 @@ function createNewMovie (movieInput){
 
 function renderNewMovie(movieObj) {
     itemEl = document.createElement('li')
+    buttonEl=document.createElement('button')
     itemEl.innerHTML = `${movieObj.title}`
     movieList.appendChild(itemEl)
+    itemEl.appendChild(buttonEl)
+    buttonEl.innerText = "Not Yet Watched"
 }
