@@ -10,9 +10,9 @@ form.addEventListener("submit", event =>{
     createNewMovie(movieInput)
 })
 
-form.addEventListener('click', event => {
-
-    
+movieList.addEventListener('click', event => {
+console.log(event.target.id)
+document.getElementById(event.target.id).innerText = "Watched"
 })
 
 fetch(url)
