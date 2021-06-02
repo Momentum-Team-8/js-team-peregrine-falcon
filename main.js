@@ -15,6 +15,15 @@ form.addEventListener('click', event => {
     
 })
 
+fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        for(let movie of data){
+            renderNewMovie(movie)
+        }
+    })
+
+
 function createNewMovie (movieInput){
     fetch (url,{
         method: "POST",
