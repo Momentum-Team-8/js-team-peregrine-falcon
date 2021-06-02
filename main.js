@@ -3,7 +3,9 @@ const movieInput = document.getElementById("movie-input").value
 const movieList = document.getElementById('movie-list')
 
 document.addEventListener("submit-button", event =>{
+    const movieInput = document.getElementById("movie-input").value
     event.preventDefault()
+    console.log(movieInput)
     createNewMovie(movieInput)
 })
 
@@ -15,6 +17,9 @@ function createNewMovie (){
         ({title: movieInput
         })
         .then(response => response.json())
+        
+    
+
         .then(data => {
             renderNewMovie(data)
         })
