@@ -12,10 +12,6 @@ form.addEventListener("submit", event =>{
     createNewMovie(movieInput)
 })
 
-movieList.addEventListener('click', event => {
-console.log(event.target.id)
-document.getElementById(event.target.id).innerText = "Watched" + " " + moment().format('l')
-})
 
 fetch(url)
     .then(response => response.json())
@@ -33,6 +29,7 @@ function createNewMovie (movieInput){
         body: JSON.stringify({
             title: movieInput,
             body: movieInput,
+            created_at: moment().format()
         })
     })
 
@@ -47,10 +44,26 @@ function createNewMovie (movieInput){
 function renderNewMovie(movieObj) {
     const itemEl = document.createElement('li')
     let buttonEl=document.createElement('button')
-    buttonEl.id =`${movieObj.id}-${movieObj.title}`
+    buttonEl.id =`${movieObj.id}`
     itemEl.innerHTML = `${movieObj.title}`
     movieList.appendChild(itemEl)
     itemEl.appendChild(buttonEl)
     buttonEl.innerText = "Not Yet Watched"
-
+    document.getElementById(event.target.id).innerText = "Watched" + " " + moment().format('l')
+    buttonEl.addEventListener('click', event => {
+        console.log(event.target.id)
+        
+        fetch(url, {
+            method:"PATCH",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+            id: event.target.id,
+            watched_at: moment().format()
+               
+            })
+            
+        })
+        
+        
+        })
 }
