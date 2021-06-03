@@ -49,7 +49,7 @@ function renderNewMovie(movieObj) {
     movieList.appendChild(itemEl)
     itemEl.appendChild(buttonEl)
     buttonEl.innerText = "Not Yet Watched"
-    document.getElementById(event.target.id).innerText = "Watched" + " " + moment().format('l')
+    // document.getElementById(movieObj.id).innerText = "Watched" + " " + moment().format('l')
     buttonEl.addEventListener('click', event => {
         console.log(event.target.id)
         
@@ -63,7 +63,9 @@ function renderNewMovie(movieObj) {
             })
             
         })
-        
+        if (movieObj.watched_at=== true){
+            document.getElementById(movieObj.id).innerText = "Watched" 
+        }
         
         })
 }
